@@ -54,12 +54,13 @@ sequenceDiagram
 sequenceDiagram
     participant browser
     participant server
-    Note right of browser: javascript prevents the default form submission
+    
     browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
-    Note: note content and date are sent as JSON
+    Note right of browser: javascript prevents the default form submission
+    Note right of browser: note content and date are sent as JSON
     
     server-->>browser: HTTP 201/ JSON response
-    Note : Javascript adds the new note to the page
+    Note right of browser: Javascript adds the new note to the page
     
 ```
 
