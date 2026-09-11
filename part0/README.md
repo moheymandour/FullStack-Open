@@ -49,3 +49,17 @@ sequenceDiagram
     Note right of browser: Browser executes JavaScript and renders the notes
 ```
 
+## 0.6: New note in Single page app diagram
+```mermaid
+sequenceDiagram
+    participant browser
+    participant server
+    Note right of browser: javascript prevents the default form submission
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    Note: note content and date are sent as JSON
+    
+    server-->>browser: HTTP 201/ JSON response
+    Note : Javascript adds the new note to the page
+    
+```
+
